@@ -1,0 +1,150 @@
+
+
+/* Estilo del cuerpo */
+body{
+    background-image: url(/static/fondo.png);
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    align-items: center;
+}
+
+.container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+nav a {
+    align-items: center;
+    text-align: center;
+    color: rgb(245, 250, 247); /* Color del texto */
+    background-color: rgb(28, 230, 71);
+    text-decoration: none; /* Sin subrayado */
+    padding: 10px 15px; /* Espaciado interno para simular un botón */
+    margin: 0 10px; /* Espaciado entre botones */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave */
+    font-size: 25px;
+    width: 15%;
+}
+
+/* Efecto de hover */
+nav a:hover {
+    background-color: #45a049; /* Color de fondo al pasar el ratón */
+}
+/* CSS para el formulario de inscripción */
+h1{
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+form a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* CSS para la tabla de contenido del curso */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+form input[type="radio"] {
+    margin-bottom: 10px;
+}
+form input[type="password"] {
+    margin-bottom: 10px;
+}
+form input[type="email"] {
+    margin-bottom: 10px;
+}
+.radio-group {
+    margin-bottom: 12px;
+}
+
+.radio-group label {
+    display: inline;
+    margin-right: 10px;
+    font-weight: normal;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.medio_radio{
+    width: 50%;
+    padding: 0%;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+}

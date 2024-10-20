@@ -1,0 +1,49 @@
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<h1>REGISTRO DE PRODUCTOS</h1>
+<form method="POST" action="{{ url_for('procesa_productos') }}">
+    <label for="producto">producto:</label>
+    <input type="text" id="producto" name="producto">
+    <br>
+    <label for="categoria">Categoria:</label>
+    <select id="categoria" name="categoria">
+        <option value="LACTEOS">LACTEOS</option>
+        <option value="VERDURAS">VERDURAS</option>
+        <option value="ESCOLAR">ESCOLAR</option>
+        <option value="BATERIA">BATERIA</option>
+    </select>
+    <br>
+    <label for="existencias">Existencias:</label>
+    <input type="text" id="existencias" name="existencias">
+    <br>
+    <label for="precio">Precio:</label>
+    <input type="text" id="precio" name="precio">
+    <br>
+    
+    <button type="submit">Enviar</button>
+    <a href="{{ url_for('index') }}">volver</a>
+    <br>
+    <a href="{{ url_for('vaciar_producto') }}">Vaciar lista</a>
+    <h3>lista de Productos</h3>
+    {% if productos %}
+    <table>
+        <tr>
+            <th>producto</th>
+            <th>categoria</th>
+            <th>existencias</th>
+            <th>precio</th>
+        </tr>
+        {% for item in productos %}
+        <tr>
+            <td>{{ item.producto }}</td>
+            <td>{{ item.categoria }}</td>
+            <td>{{ item.existencias }}</td>
+            <td>{{ item.precio }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>La lista está vacía</p>
+    {% endif %}
+</form>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<h1>Inscripción en curso</h1>
+<form method="POST" action="{{ url_for('procesa') }}">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="nombre">
+    <br>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido">
+    <br>
+    <label for="cursos">Curso:</label>
+    <select id="cursos" name="curso">
+        <option value="PYTHON">PYTHON</option>
+        <option value="C++">C++</option>
+        <option value="JAVA">JAVA</option>
+        <option value="C#">C#</option>
+    </select>
+    <br>
+    <button type="submit">Enviar</button>
+    <a href="{{ url_for('index') }}">volver</a>
+    <br>
+    <a href="{{ url_for('vaciar') }}">Vaciar lista</a>
+    <h3>Contenido del curso</h3>
+    {% if cursos %}
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Curso</th>
+        </tr>
+        {% for item in cursos %}
+        <tr>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.apellido }}</td>
+            <td>{{ item.curso }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>La lista está vacía</p>
+    {% endif %}
+</form>
+{% endblock %}
+
